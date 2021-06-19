@@ -13,7 +13,7 @@
 </template>
 
 <script>
-export default {
-  name: 'el-logo'
-}
+  export default {
+    name: 'el-logo'
+  }
 </script>

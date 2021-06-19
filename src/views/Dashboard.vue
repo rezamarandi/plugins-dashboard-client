@@ -7,14 +7,14 @@
         </div>
         <div class="dashboard__menu__nav">
           <div class="dashboard__menu__nav__item">
-            <router-link to="/marketing">Marketing</router-link>
-            <router-link to="/finance">Finance</router-link>
-            <router-link to="/personnel">Personnel</router-link>
+            <router-link to="/marketing"><el-icon name="icon-marketing"/>Marketing</router-link>
+            <router-link to="/finance"><el-icon name="icon-finance"/>Finance</router-link>
+            <router-link to="/personnel"><el-icon name="icon-people"/>Personnel</router-link>
           </div>
         </div>
         <div class="dashboard__menu__footer">
           All plugins enabled
-          <el-checkbox icon="power" big />
+          <el-checkbox icon="icon-power" big />
         </div>
       </div>
       <div class="dashboard__content">

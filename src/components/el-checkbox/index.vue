@@ -68,6 +68,7 @@
     height: var(--height);
     border-radius: calc(var(--width) * 0.5);
     cursor: pointer;
+    will-change: background-color;
   }
 
   .checkbox .swtich__toggle {
@@ -79,12 +80,28 @@
     height: calc(var(--height) - (var(--margin) * 2));
     border-radius: 50%;
     background-color: var(--color-light);
+    pointer-events: none;
     transition: transform 300ms;
     will-change: transform;
   }
 
   .checkbox input:checked ~ .swtich .swtich__toggle {
     transform: translateX(calc(var(--width) - var(--height)));
+  }
+
+  .swtich__toggle svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    fill: var(--color-red);
+    transition: fill 300ms;
+    will-change: fill;
+  }
+
+  .checkbox input:checked ~ span .swtich__toggle svg {
+    fill: var(--color-green);
   }
 
   .checkbox .label {
