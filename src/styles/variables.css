@@ -1,8 +1,10 @@
 :root {
   --spacing: 20px;
 
-  --color-light: #ffffff;
-  --color-dark: #0b344b;
+  --color-light: #FFFFFF;
+  --color-dark: #0B344B;
+  --color-green: #5BC88D;
+  --color-red: #C63040;
 
   --font-family: 'Open Sans', -apple-system, system-ui, "Helvetica Neue", Helvetica, "Segoe UI", Roboto, "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
   --font-weight-regular: 400;
