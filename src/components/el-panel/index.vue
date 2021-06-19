@@ -31,7 +31,6 @@
   .panel__frame {
     width: 1170px;
     max-width: 100%;
-    padding: var(--spacing);
     background-color: var(--color-light);
   }
 
