@@ -42,6 +42,7 @@ export default {
         .then(res => res.json())
         .then(json => {
           this.data = json[0]
+          //Something something
         })
       //   const requestOptions = {
       //     method: "POST",
