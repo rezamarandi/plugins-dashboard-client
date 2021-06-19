@@ -5,6 +5,7 @@ html {
   scroll-behavior: smooth;
   -ms-overflow-style: scrollbar;
   -webkit-text-size-adjust: 100%;
+  background-color: var(--color-dark);
 }
 
 *,
