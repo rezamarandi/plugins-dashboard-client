@@ -20,19 +20,42 @@
       <div class="dashboard__content">
         <h2 class="dashboard__content__title">Dashboard {{ $route.params.tab }}</h2>
         <el-grid>
-          <el-plugin />
-          <el-plugin />
-          <el-plugin />
-          <el-plugin />
-          <el-plugin />
-          <el-plugin />
-          <el-plugin />
+          <el-plugin
+          v-for="(plugin, index) in data.plugins"
+          :key="index"
+          />
         </el-grid>
       </div>
     </div>
   </el-panel>
 </template>
+<script>
+export default {
+  data() {
+      return {
+        data: []
+      }
+    },
 
+    created() {
+      fetch("/api/plugins")
+        .then(res => res.json())
+        .then(json => {
+          this.data = json[0]
+        })
+      //   const requestOptions = {
+      //     method: "POST",
+      //     headers: { "Content-Type": "application/json" },
+      //   };
+      // fetch("/api/plugins", requestOptions)
+      //   .then(res => res.json())
+      //   .then(json => {
+      //     console.log(json)
+      //   })
+
+    }
+}
+</script>
 <style>
   .dashboard {
     display: flex;
@@ -88,7 +111,7 @@
       justify-content: space-between;
       align-items: center;
     }
-  
+
     .dashboard__menu__nav__item a {
       flex-direction: column;
       justify-content: center;
