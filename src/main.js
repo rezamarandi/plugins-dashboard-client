@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
-import template from './template.vue'
+import template from './template'
+import router from './router'
 import './styles'
 
-createApp(template).mount('#app')
+createApp(template).use(router).mount('#app')
