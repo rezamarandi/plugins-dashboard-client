@@ -2,11 +2,14 @@
   --spacing: 20px;
 
   --color-light: #FFFFFF;
+  --color-light-gray: #DCDCDC;
+  --color-gray: #9AA7B0;
   --color-dark: #0B344B;
   --color-green: #5BC88D;
   --color-red: #C63040;
 
+
   --font-family: 'Open Sans', -apple-system, system-ui, "Helvetica Neue", Helvetica, "Segoe UI", Roboto, "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
   --font-weight-regular: 400;
-  --font-weight-bold: 600;
+  --font-weight-bold: 700;
 }
