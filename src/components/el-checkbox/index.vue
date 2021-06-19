@@ -1,18 +1,34 @@
 <template>
-  <label class="checkbox">
+  <label class="checkbox" :class="{ ['checkbox--big']: !!big }">
     <input type="checkbox" />
     <span class="swtich">
       <span class="swtich__toggle">
-        <!-- TODO: add icon -->
+        <el-icon :name="icon" />
       </span>
     </span>
-    <span class="label">Allowed</span>
+    <span v-if="!!label" class="label">{{ label }}</span>
   </label>
 </template>
 
 <script>
   export default {
     name: 'el-checkbox',
+    props: {
+      big: {
+        type: Boolean,
+        default: false
+      },
+      checked: {
+        type: Boolean,
+        default: false
+      },
+      icon: {
+        type: String,
+      },
+      label: {
+        type: String,
+      }
+    }
   }
 </script>
 
@@ -26,6 +42,12 @@
     flex-direction: column;
     align-items: flex-end;
     user-select: none;
+  }
+
+  .checkbox--big {
+    --width: 46px;
+    --height: 30px;
+    --margin: 4px;
   }
 
   .checkbox span {
@@ -62,7 +84,7 @@
   }
 
   .checkbox input:checked ~ .swtich .swtich__toggle {
-    transform: translateX(100%);
+    transform: translateX(calc(var(--width) - var(--height)));
   }
 
   .checkbox .label {
