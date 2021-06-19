@@ -1,5 +1,9 @@
+import Checkbox from './el-checkbox'
 import Panel from './el-panel'
+import Plugin from './el-plugin'
 
 export {
-  Panel
+  Checkbox,
+  Panel,
+  Plugin,
 }
