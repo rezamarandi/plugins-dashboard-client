@@ -1,13 +1,11 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
+import { createStore } from 'vuex';
 
-Vue.use(Vuex);
-
-export default new Vuex.Store({
+export default createStore({
 	state: {
 		plugins: Object,
 		tabData: Object,
 		tabs: Object,
+		enableAll: Boolean,
 	},
 	getters: {
 		tabData: (state) => state.tabData,
@@ -15,10 +13,12 @@ export default new Vuex.Store({
 		pluginData: (state) => state.plugins,
 	},
 	actions: {
-		async setCurrentData(state) {
-			const result = await fetch('/api/plugins');
-			const serverResponse = await result.json();
-			state.commit('setServerResult', serverResponse);
+		async setServerData(state) {
+			fetch('/api/plugins')
+				.then((res) => res.json())
+				.then((json) => {
+					state.commit('setServerResult', json[0]);
+				});
 		},
 	},
 	mutations: {
