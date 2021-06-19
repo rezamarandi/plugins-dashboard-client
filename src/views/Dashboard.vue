@@ -20,10 +20,10 @@
       <div class="dashboard__content">
         <h2 class="dashboard__content__title">Dashboard {{ $route.params.tab }}</h2>
         <el-grid>
-          <el-plugin
+          <!-- <el-plugin
           v-for="(plugin, index) in data.plugins"
           :key="index"
-          />
+          /> -->
         </el-grid>
       </div>
     </div>
@@ -31,19 +31,16 @@
 </template>
 <script>
 export default {
-  data() {
-      return {
-        data: []
+  computed: {
+      plugins(){
+        return this.store.getters.pluginData
       }
     },
-
+    mounted() {
+      // this.$store.dispatch('setServerResult')
+    },
     created() {
-      fetch("/api/plugins")
-        .then(res => res.json())
-        .then(json => {
-          this.data = json[0]
-          //Something something
-        })
+      console.log(this.plugins)
       //   const requestOptions = {
       //     method: "POST",
       //     headers: { "Content-Type": "application/json" },
